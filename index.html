@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLUE TEAM BOOTCAMP | Jyothi Engineering College</title>
+  
+  <!-- Classic Editorial Serif Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Bar: Left = College, Right = Department & Club -->
+  <header class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="college-name">Jyothi Engineering College, Thrissur</div>
+      <div class="dept-name">
+        Dept. of CSE (Cyber Security) &bull; <strong>Cyber Club (CYBERTON)</strong>
+      </div>
+    </div>
+  </header>
+
+  <!-- Centered Title Header -->
+  <header class="main-header">
+    <div class="container">
+      <h1 class="main-title">BLUE TEAM BOOTCAMP</h1>
+      <p class="main-subtitle">Advanced Cyber Awareness</p>
+      
+      <div class="header-links">
+        <button class="text-btn" id="btnOpenPoster">View Official Poster</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <!-- VIEW 1: 6-Schools 3x2 Folder Grid -->
+    <section class="view-section" id="allFoldersView">
+      <div class="schools-grid" id="schoolsGrid">
+        <!-- Rendered dynamically from gallery-data.js -->
+      </div>
+    </section>
+
+    <!-- VIEW 2: Single School Folder Detail View -->
+    <section class="view-section view-hidden" id="singleFolderView">
+      
+      <div class="folder-view-header">
+        <button class="back-btn" id="btnBackToGrid">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          Back to all schools
+        </button>
+
+        <div class="school-meta-header">
+          <h2 class="folder-view-title" id="folderTitle">School Name</h2>
+          <p class="folder-view-subtitle" id="folderSubtitle">Date &bull; Day</p>
+        </div>
+      </div>
+
+      <!-- Photos Grid -->
+      <div class="photos-grid" id="folderPhotosGrid">
+        <!-- Loaded dynamically -->
+      </div>
+
+      <!-- Empty state when 0 photos -->
+      <div class="empty-photos-box view-hidden" id="emptyPhotosState">
+        <p>No photos added for this school yet.</p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Minimal Lightbox Modal -->
+  <div class="modal-overlay" id="lightboxModal" aria-hidden="true" role="dialog">
+    <div class="modal-box">
+      <button class="modal-close" id="btnCloseLightbox" aria-label="Close">&times;</button>
+      <div class="modal-img-wrap">
+        <img src="" alt="" class="modal-img" id="lightboxImg">
+      </div>
+      <div class="modal-bottom">
+        <div>
+          <div class="modal-caption" id="lightboxTitle">Photo</div>
+          <div class="modal-sub" id="lightboxMeta">Date &bull; School</div>
+        </div>
+        <div>
+          <a href="#" download class="text-btn" id="lightboxDownload">Download Image</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Official Poster Modal -->
+  <div class="modal-overlay" id="posterModal" aria-hidden="true" role="dialog">
+    <div class="modal-box" style="max-width: 650px;">
+      <button class="modal-close" id="btnClosePoster" aria-label="Close">&times;</button>
+      <div class="modal-img-wrap" style="background: #ffffff; padding: 1rem;">
+        <img src="assets/images/poster/official_poster.jpg" alt="Official Blue Team Bootcamp Poster" class="modal-img" style="max-height: 80vh;">
+      </div>
+      <div class="modal-bottom">
+        <div class="modal-caption">Official Outreach Programme Poster</div>
+        <a href="assets/images/poster/official_poster.jpg" download class="text-btn">Download Poster</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      &copy; 2026 Dept. of CSE (Cyber Security) &bull; Jyothi Engineering College &bull; Cyber Club (CYBERTON)
+    </div>
+  </footer>
+
+  <script src="gallery-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
